@@ -17,6 +17,18 @@ pip install "uvicorn[standard]"
 ```
 
 ## REQUEST data 
+Pass in the name of a city into the ```get_current_weather``` function. 
+```
+def get_current_weather(city_current):
+    url = 'http://127.0.0.1:8001/current/' + city_current
+    res = requests.get(url)
+    if res.status_code == 200:
+        return res.json()
+    else:
+        print("There was an error sending your request. Status Code: ", res.status_code)
+        return None
+```
+
 
 ## RECEIVE data
 
