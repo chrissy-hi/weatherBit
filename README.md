@@ -1,2 +1,2 @@
-# weatherBit
-weatherBitAPI for CS361
+# weatherBit API Microsesrvice
+# Communication Contract 
