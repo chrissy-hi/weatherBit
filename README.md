@@ -58,3 +58,5 @@ For instance, if the city "Bellevue" is passed into the function. The received d
 This will be a 7 day forecast of the weather that will include daily maximum temperature, minimum temperature, dew point, uv index, etc.
 
 # UML sequence diagram 
+
+![image](https://github.com/chrissy-hi/weatherBit/assets/77197824/0b452428-6ca3-4515-a69b-f8012a895ab2)
