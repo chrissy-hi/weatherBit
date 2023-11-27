@@ -26,7 +26,7 @@ def get_daily_forecast(city_forecast):
 
 
 if __name__ == '__main__':
-    city = input("Enter the city you would like to get data from: ")
+    city = input("Enter the city or zip code you would like to get data from: ")
     current_weather = get_current_weather(city)
 
     daily_weather = get_daily_forecast(city)
