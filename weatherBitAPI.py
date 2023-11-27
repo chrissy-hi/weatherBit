@@ -9,8 +9,14 @@ app = FastAPI()
 
 @app.get('/current/{city_current}')
 def current_weather(city_current):
-    api_url = f'http://api.weatherbit.io/v2.0/forecast/daily?key=732710630ccd492a9c1042a8b2fff513&units=I&days=10&' \
-                  f'city={city_current}'
+    print(city_current)
+    if city_current.isdigit():
+        api_url = f'http://api.weatherbit.io/v2.0/current?key=732710630ccd492a9c1042a8b2fff513&units=I' \
+                  f'&postal_code={city_current}'
+    else:
+        api_url = f'http://api.weatherbit.io/v2.0/current?key=732710630ccd492a9c1042a8b2fff513&units=I' \
+                  f'&city={city_current}'
+    print(api_url)
     response = requests.get(api_url)
     try:
         data = json.loads(response.text)
@@ -21,8 +27,12 @@ def current_weather(city_current):
 
 @app.get('/forecast/{city_forecast}')
 def forecast_daily(city_forecast):
-    api_url = f'http://api.weatherbit.io/v2.0/forecast/daily?key=732710630ccd492a9c1042a8b2fff513&units=I&days=7&' \
-                f'city={city_forecast}'
+    if city_forecast.isdigit():
+        api_url = f'http://api.weatherbit.io/v2.0/forecast/daily?key=732710630ccd492a9c1042a8b2fff513&units=I&days=7&' \
+                  f'postal_code={city_forecast}'
+    else:
+        api_url = f'http://api.weatherbit.io/v2.0/forecast/daily?key=732710630ccd492a9c1042a8b2fff513&units=I&days=7&' \
+                  f'city={city_forecast}'
     response = requests.get(api_url)
     try:
         data = json.loads(response.text)
@@ -32,4 +42,4 @@ def forecast_daily(city_forecast):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8001)
+    uvicorn.run(app, host='localhost', port=8001)
