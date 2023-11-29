@@ -9,6 +9,7 @@ def get_current_weather(city_current):
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
+        print(f'{city_current} current weather ')
         print(res.json())
         return res.json()
     else:
@@ -21,6 +22,7 @@ def get_current_weather_lon_lat(lon, lat):
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
+        print(f'{lon} and {lat} current weather ')
         print(res.json())
         return res.json()
     else:
@@ -33,6 +35,7 @@ def get_daily_forecast(city_forecast):
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
+        print(f'{city_forecast} daily forecast ')
         print(res.json())
         return res.json()
     else:
@@ -45,6 +48,7 @@ def get_daily_forecast_lon_lat(lon, lat):
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
+        print(f'{lon} and {lat} daily forecast ')
         print(res.json())
         return res.json()
     else:
