@@ -29,7 +29,7 @@ def get_current_weather_lon_lat(lon, lat):
 
 def get_daily_forecast(city_forecast):
     # obtain url with desired city
-    url = 'http://localhost:8001/forecast/daily' + city_forecast
+    url = 'http://localhost:8001/forecast/daily/' + city_forecast
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
@@ -41,7 +41,7 @@ def get_daily_forecast(city_forecast):
 
 def get_daily_forecast_lon_lat(lon, lat):
     # obtain url with desired city
-    url = 'http://localhost:8001/forecast/daily' + lon + "/" + lat
+    url = 'http://localhost:8001/forecast/daily/' + lon + "/" + lat
     # send get request
     res = requests.get(url)
     if res.status_code == 200:
